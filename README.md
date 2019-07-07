@@ -14,6 +14,7 @@ O(n), O(n log n), O(1), O(n^2), O(2^n)
 ```
 
 Answer:
+
 Fastest
 ```
 O(1),
@@ -23,3 +24,23 @@ O(n^2),
 O(2^n)
 ```
 Slowest
+
+## Question 3
+
+### What's the time complexity of the following function?
+
+What is the time complexity, expressed in big O notation, of the below function? This function, scrambleString, accepts a string as an argument and returns that a string with the letters randomly rearranged.
+
+```javascript
+function scrambleString(str) {
+  let split = str.split("");    
+
+  split.forEach((char, idx) => {
+    let randInd = Math.floor(Math.random() * split.length);
+    split[idx] = split[randInd];
+    split[randInd] = char;
+  });
+
+  return split.join("");
+}
+```
